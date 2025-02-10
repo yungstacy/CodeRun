@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.io.IOException;
+
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+
+        double a, b, c;
+
+
+        a = scanner.nextDouble();
+        b = scanner.nextDouble();
+        c = scanner.nextDouble();
+
+        double d = b * b - 4 * a * c;
+
+        if (d < 0) {
+            System.out.println(0);
+        } else if (d == 0) {
+            System.out.println(1);
+            System.out.println(-b / (2 * a));
+        } else {
+            System.out.println(2);
+            double x1 = (-b - Math.sqrt(d)) / (2 * a);
+            double x2 = (-b + Math.sqrt(d)) / (2 * a);
+
+            if (x1 < x2) {
+                System.out.println(x1 + " " + x2);
+            } else {
+                System.out.println(x2 + " " + x1);
+            }
+        }
+
+        scanner.close();
+    }
+}
